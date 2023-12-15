@@ -5,7 +5,7 @@ const projectsModel = require("../models/project.model");
 
 
 //search Data
-ProjectRouter.get("/",async(req,res)=>{
+ProjectRouter.get("/search",async(req,res)=>{
   let {client}=req.query;
       let user= await projectsModel.find({clientname: new RegExp(client, 'i')})
       res.send({user:user})
